@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import DashboardLayout from "@/components/layout/DashboardLayout"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { 
   Users, 
   CheckCircle, 
