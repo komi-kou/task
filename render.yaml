@@ -1,13 +1,27 @@
+databases:
+  - name: crm-db
+    plan: free
+    databaseName: crmdb
+    user: crmuser
+
 services:
   - type: web
     name: crm-task-manager
-    env: node
-    buildCommand: npm install && npm run build
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx prisma db push && npx prisma generate && npm run build
     startCommand: npm start
     envVars:
+      - key: NODE_ENV
+        value: production
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: crm-db
+          property: connectionString
+      - key: NEXTAUTH_URL
+        fromService:
+          type: web
+          name: crm-task-manager
+          property: url
       - key: NEXTAUTH_SECRET
         generateValue: true
-      - key: NEXTAUTH_URL
-        sync: false

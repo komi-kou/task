@@ -509,7 +509,7 @@ export default function DashboardPage() {
                         <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div 
                             className="bg-blue-600 h-2 rounded-full" 
-                            style={{ width: `${stats?.leads.total > 0 ? (stats.leads.new / stats.leads.total * 100) : 0}%` }}
+                            style={{ width: `${stats && stats.leads.total > 0 ? (stats.leads.new / stats.leads.total * 100) : 0}%` }}
                           />
                         </div>
                         <span className="text-sm font-medium">{stats?.leads.new || 0}</span>
@@ -521,7 +521,7 @@ export default function DashboardPage() {
                         <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div 
                             className="bg-yellow-600 h-2 rounded-full" 
-                            style={{ width: `${stats?.leads.total > 0 ? (stats.leads.contacted / stats.leads.total * 100) : 0}%` }}
+                            style={{ width: `${stats && stats.leads.total > 0 ? (stats.leads.contacted / stats.leads.total * 100) : 0}%` }}
                           />
                         </div>
                         <span className="text-sm font-medium">{stats?.leads.contacted || 0}</span>
@@ -533,7 +533,7 @@ export default function DashboardPage() {
                         <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div 
                             className="bg-green-600 h-2 rounded-full" 
-                            style={{ width: `${stats?.leads.total > 0 ? (stats.leads.qualified / stats.leads.total * 100) : 0}%` }}
+                            style={{ width: `${stats && stats.leads.total > 0 ? (stats.leads.qualified / stats.leads.total * 100) : 0}%` }}
                           />
                         </div>
                         <span className="text-sm font-medium">{stats?.leads.qualified || 0}</span>
