@@ -1,0 +1,9 @@
+{
+  "buildCommand": "prisma generate && next build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["hnd1"],
+  "env": {
+    "NEXTAUTH_URL": "https://your-app-name.vercel.app"
+  }
+}
