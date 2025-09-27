@@ -1,8 +1,3 @@
 {
-  "buildCommand": "next build",
-  "framework": "nextjs",
-  "regions": ["hnd1"],
-  "env": {
-    "NEXTAUTH_URL": "https://your-app-name.vercel.app"
-  }
+  "framework": "nextjs"
 }
